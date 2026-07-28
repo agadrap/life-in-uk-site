@@ -1,10 +1,10 @@
 # Life in the UK — Revision Tool
 
-An interactive revision app for the Life in the UK citizenship test, built as a single self-contained HTML file with no dependencies or build steps.
+The standalone site for the Life in the UK citizenship test revision app, deployed at [lifeintheukflashcards.com](https://lifeintheukflashcards.com). The core practice tool (`practice/index.html`) is a single self-contained HTML file; the surrounding site (landing page, About, legal pages) is plain static HTML. No dependencies, no build step.
 
 ## Features
 
-- **Flashcards** — 91 multiple choice questions across 5 categories (Values, History, Government, Society, Citizenship), matching the real test format
+- **Flashcards** — 85 multiple choice questions across 5 categories (Values, History, Government, Society, Citizenship), matching the real test format
 - **Monarchs** — interactive family tree of British monarchs with dynasty columns, popup details and reign timeline
 - **History Timeline** — chronological spine of key events filterable by era, with monarch and Prime Minister annotations
 - **Notable Britons** — 48 profiles across Science, Arts, Sport and Politics with expandable biographies
