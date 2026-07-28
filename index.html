@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life in the UK: Flashcards — Free revision app for the UK citizenship test</title>
+<meta name="description" content="A free web and iOS revision app for the Life in the UK citizenship test. Every answer explained. Monarchs, timelines and law as diagrams. No ads, no account.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d; --navy-2:#132648; --royal:#1a3a6e;
+  --gold:#c9a84c; --gold-light:#e8c97a;
+  --cream:#faf6ee; --parchment:#f0e8d5;
+  --muted:rgba(250,246,238,.62);
+  --line:rgba(201,168,76,.22);
+  --maxw:1120px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 12% -5%,rgba(201,168,76,.10) 0%,transparent 55%),
+             radial-gradient(ellipse at 88% 105%,rgba(26,58,110,.55) 0%,transparent 55%)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+em{font-style:italic;color:var(--gold-light)}
+a{color:inherit;text-decoration:none}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:rgba(15,31,61,.82);border-bottom:1px solid var(--line)}
+.navin{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:28px}
+.logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:26px;margin-left:auto;font-size:14px;color:var(--muted)}
+.navlinks a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;padding:11px 20px;border-radius:10px;transition:.2s;border:1px solid transparent;white-space:nowrap}
+.btn-gold{background:linear-gradient(180deg,var(--gold-light),var(--gold));color:#1a1408;box-shadow:0 6px 20px rgba(201,168,76,.28)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 9px 26px rgba(201,168,76,.38)}
+.btn-ghost{border-color:var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,168,76,.07)}
+.btn-lg{padding:15px 28px;font-size:15px}
+
+/* HERO */
+.hero{padding:92px 0 76px;text-align:center}
+.hero h1{font-size:clamp(38px,6.2vw,70px);margin:20px auto 22px;max-width:14ch}
+.hero p.sub{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:56ch;margin:0 auto 34px;font-weight:300}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.microcopy{font-size:13px;color:rgba(250,246,238,.45)}
+.trust{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+.trust div{text-align:center}
+.trust b{display:block;font-family:'Playfair Display',serif;font-size:27px;color:var(--gold-light);font-weight:600}
+.trust small{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+
+/* FOUNDER */
+.founder{background:linear-gradient(180deg,rgba(26,58,110,.35),transparent);padding:52px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.founder .wrap{display:flex;gap:26px;align-items:center;max-width:820px}
+.avatar{width:62px;height:62px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--gold),#8a6d1f);
+  display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:24px;color:#1a1408;font-weight:700}
+.founder q{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(17px,2.3vw,22px);line-height:1.5;display:block;margin-bottom:9px}
+.founder cite{font-style:normal;font-size:13px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:86px 0}
+.sechead{text-align:center;max-width:60ch;margin:0 auto 52px}
+.sechead h2{font-size:clamp(28px,4vw,42px);margin:12px 0 14px}
+.sechead p{color:var(--muted);font-weight:300;font-size:16px}
+
+/* CONTRAST */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto}
+.vs>div{padding:30px;border-radius:16px;border:1px solid var(--line)}
+.vs .them{background:rgba(255,255,255,.02);opacity:.72}
+.vs .us{background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.4)}
+.vs h4{font-family:'DM Sans';font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;color:var(--gold)}
+.vs .them h4{color:var(--muted)}
+.vs li{list-style:none;font-size:15px;padding:9px 0 9px 26px;position:relative;color:rgba(250,246,238,.85);font-weight:300}
+.vs .them li::before{content:'×';position:absolute;left:0;color:#e05c5c;font-size:17px;top:7px}
+.vs .us li::before{content:'✓';position:absolute;left:0;color:#4cbe8a;font-size:15px;top:9px}
+
+/* FEATURES */
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px}
+.feat{padding:30px 26px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);transition:.25s}
+.feat:hover{border-color:rgba(201,168,76,.5);transform:translateY(-3px);background:rgba(201,168,76,.05)}
+.feat .ico{font-size:27px;margin-bottom:15px;display:block}
+.feat h3{font-size:19px;margin-bottom:9px}
+.feat p{font-size:14.5px;color:var(--muted);font-weight:300}
+.feat .tag{display:inline-block;margin-top:15px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:3px 9px;border-radius:99px}
+
+/* SCREENSHOTS */
+.shots{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+.shot{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone{width:186px;aspect-ratio:9/19.5;border-radius:26px;border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(165deg,var(--navy-2),#0a1730);box-shadow:0 22px 50px rgba(0,0,0,.42);
+  cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+.phone:hover{transform:translateY(-3px);box-shadow:0 28px 60px rgba(0,0,0,.55)}
+.phone:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.phone img{width:100%;height:100%;object-fit:cover;display:block}
+.shot small{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(250,246,238,.45)}
+
+/* LIGHTBOX */
+.lightbox{border:none;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;
+  display:grid;place-items:center;cursor:zoom-out}
+.lightbox::backdrop{background:rgba(4,8,20,.88);backdrop-filter:blur(6px)}
+.lightbox img{max-width:min(92vw,420px);max-height:92vh;border-radius:26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);display:block}
+.lightbox[open]{animation:lb-in .18s ease-out}
+@keyframes lb-in{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+
+/* PRICING */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:0 auto}
+.tier{padding:34px 30px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.tier.pro{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,168,76,.11),rgba(201,168,76,.03));position:relative}
+.tier.pro::after{content:'BEST VALUE';position:absolute;top:-10px;right:22px;background:var(--gold);color:#1a1408;font-size:9.5px;font-weight:700;letter-spacing:.13em;padding:4px 11px;border-radius:99px}
+.tier h3{font-size:22px;margin-bottom:6px}
+.tier .amt{font-family:'Playfair Display',serif;font-size:38px;color:var(--gold-light);margin:6px 0 4px}
+.tier .per{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+.tier li{list-style:none;font-size:14.5px;padding:8px 0 8px 24px;position:relative;color:rgba(250,246,238,.85);font-weight:300}
+.tier li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:13px;top:9px}
+.tier .btn{width:100%;justify-content:center;margin-top:22px}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:19px 0}
+summary{cursor:pointer;font-size:16.5px;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--gold);font-size:21px;line-height:1;flex-shrink:0}
+details[open] summary::after{content:'−'}
+details p{margin-top:13px;color:var(--muted);font-size:15px;font-weight:300;max-width:64ch}
+
+/* FINAL CTA */
+.final{text-align:center;background:linear-gradient(180deg,transparent,rgba(26,58,110,.42));border-top:1px solid var(--line)}
+.final h2{font-size:clamp(28px,4.4vw,46px);margin-bottom:18px}
+.final p{color:var(--muted);margin-bottom:30px;font-weight:300;font-size:17px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:46px 0 60px;font-size:13.5px;color:var(--muted)}
+.fgrid{display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;margin-bottom:30px}
+.fgrid a{display:block;padding:5px 0}
+.fgrid a:hover{color:var(--gold)}
+.fgrid h5{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:11px}
+.disc{border-top:1px solid var(--line);padding-top:24px;font-size:12.5px;line-height:1.75;color:rgba(250,246,238,.42);max-width:78ch}
+@media(max-width:760px){
+  .vs,.price{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .founder .wrap{flex-direction:column;text-align:center}
+  section{padding:62px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <div class="logo">Life in the <span>UK</span></div>
+    <div class="navlinks">
+      <a href="#what">What's inside</a>
+      <a href="#why">Why this one</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold">Download</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Free web app · iOS · No account needed</div>
+    <h1>Pass the test. <em>Actually understand</em> the country.</h1>
+    <p class="sub">Most Life in the UK apps make you memorise 24 answers and forget them by Friday. This one gives you the monarchs, the timeline, the law and the people behind the questions — so the answers stick.</p>
+    <div class="cta-row">
+      <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold btn-lg">Download on the App Store</a>
+      <a href="/practice/" class="btn btn-ghost btn-lg">Try free in your browser →</a>
+    </div>
+    <p class="microcopy">No sign-up. No ads. Works offline.</p>
+    <div class="trust">
+      <div><b>85</b><small>Free questions</small></div>
+      <div><b>25</b><small>Monarchs mapped</small></div>
+      <div><b>48</b><small>Notable Britons</small></div>
+      <div><b>7</b><small>Ways to study</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="founder">
+  <div class="wrap">
+    <div class="avatar">A</div>
+    <div>
+      <q>I built this to pass my own Life in the UK test. Everything that confused me — which Henry did what, how the courts fit together, why 1707 matters — became a diagram instead of a flashcard. I passed. Then I made it free.</q>
+      <cite>Aga Drapinska-Tonge · developer, and a person who sat the actual test</cite>
+    </div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">Why this one</div>
+      <h2>Drilling questions isn't the same as <em>knowing the answer</em></h2>
+      <p>The test is 24 questions in 45 minutes, and you need 18 right. Rote apps get you there on a good day. Understanding gets you there on a bad one.</p>
+    </div>
+    <div class="vs">
+      <div class="them">
+        <h4>Typical test-prep site</h4>
+        <ul>
+          <li>Endless mock tests, no explanation</li>
+          <li>Ads between every question</li>
+          <li>Account required before question one</li>
+          <li>Names and dates with no context</li>
+          <li>Nothing to do once you've passed</li>
+        </ul>
+      </div>
+      <div class="us">
+        <h4>Life in the UK: Flashcards</h4>
+        <ul>
+          <li>Every answer explained, in plain English</li>
+          <li>Zero ads, zero tracking, ever</li>
+          <li>Open it and start — no account</li>
+          <li>Monarchs, timelines and law as diagrams</li>
+          <li>Genuinely interesting after the test too</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">What's inside</div>
+      <h2>Seven ways to learn the same material</h2>
+      <p>Because the bit that won't stick is different for everyone.</p>
+    </div>
+    <div class="feats">
+      <div class="feat"><span class="ico">📇</span><h3>Flashcards</h3><p>Multiple choice in the real test format, across Values, History, Government, Society and Citizenship. Every answer comes with the why.</p><span class="tag">85 free</span></div>
+      <div class="feat"><span class="ico">👑</span><h3>Monarchs</h3><p>An interactive family tree with dynasty columns, reign timelines and pop-up detail. Finally see how the Henrys connect.</p><span class="tag">25 monarchs</span></div>
+      <div class="feat"><span class="ico">📜</span><h3>History timeline</h3><p>One chronological spine from the Romans to now, filterable by era, annotated with monarchs and prime ministers.</p><span class="tag">Filter by era</span></div>
+      <div class="feat"><span class="ico">🔬</span><h3>Notable Britons</h3><p>The scientists, writers, athletes and politicians the test keeps asking about — with biographies that make them memorable.</p><span class="tag">48 profiles</span></div>
+      <div class="feat"><span class="ico">⚖️</span><h3>UK law</h3><p>Court hierarchies for England &amp; Wales and Scotland, criminal vs civil, how a law is made, devolved powers — all as diagrams.</p><span class="tag">Visual</span></div>
+      <div class="feat"><span class="ico">🎭</span><h3>Society &amp; culture</h3><p>Traditions, holidays, sport, arts and the small cultural signals the test loves to ask about — grouped by theme so they're easier to remember.</p><span class="tag">iOS only</span></div>
+      <div class="feat"><span class="ico">☕</span><h3>Everyday life</h3><p>The practical stuff: renting, driving, the NHS, schools, tax and voting. The bits of Britain you actually deal with, and the bits the test checks.</p><span class="tag">iOS only</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">On your phone</div>
+      <h2>Built for the ten minutes before bed</h2>
+      <p>Spaced repetition schedules your reviews. Bookmarks catch what you keep getting wrong.</p>
+    </div>
+    <div class="shots">
+      <div class="shot"><div class="phone" tabindex="0" role="button" aria-label="Enlarge screenshot"><img src="/assets/screenshots/main.png" alt="Life in the UK: Flashcards home screen showing study progress and learning modes"></div><small>Home</small></div>
+      <div class="shot"><div class="phone" tabindex="0" role="button" aria-label="Enlarge screenshot"><img src="/assets/screenshots/flashcard.png" alt="Flashcard question with multiple-choice answers and plain-English explanation"></div><small>Flashcards</small></div>
+      <div class="shot"><div class="phone" tabindex="0" role="button" aria-label="Enlarge screenshot"><img src="/assets/screenshots/monarchs.png" alt="Interactive monarch family tree, Plantagenet dynasty"></div><small>Monarchs</small></div>
+      <div class="shot"><div class="phone" tabindex="0" role="button" aria-label="Enlarge screenshot"><img src="/assets/screenshots/britons.png" alt="Notable Britons: scientists, writers and inventors with short biographies"></div><small>Notable Britons</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">Pricing</div>
+      <h2>Free is genuinely useful. Pro is the whole bank.</h2>
+      <p>No trial that expires mid-revision, no ads in the free tier.</p>
+    </div>
+    <div class="price">
+      <div class="tier">
+        <h3>Free</h3>
+        <div class="amt">£0</div>
+        <div class="per">Web and iOS, forever</div>
+        <ul>
+          <li>85 practice questions</li>
+          <li>Five study modes on web, seven on iOS</li>
+          <li>Full monarch tree and timeline</li>
+          <li>No ads, no account, works offline</li>
+        </ul>
+        <a href="/practice/" class="btn btn-ghost">Start free in browser</a>
+      </div>
+      <div class="tier pro">
+        <h3>Pro</h3>
+        <div class="amt">£2.99</div>
+        <div class="per">Lifetime · or £1.99/month</div>
+        <ul>
+          <li>The complete question bank</li>
+          <li>Full-length timed mock tests</li>
+          <li>Spaced-repetition scheduling</li>
+          <li>Progress tracking and bookmarks</li>
+          <li>Choose lifetime or monthly — cancel anytime</li>
+        </ul>
+        <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold">Get Pro on the App Store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sechead">
+      <div class="eyebrow">Questions</div>
+      <h2>Before you download</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Is this the official Life in the UK test app?</summary><p>No. This is an independent revision tool with no affiliation to the Home Office or UK Visas and Immigration. Content is based on <em>Life in the United Kingdom: A Guide for New Residents</em> (3rd edition), published under the Open Parliament Licence. Always use the official handbook as your primary source.</p></details>
+      <details><summary>Do I need to pay to use it?</summary><p>No. 85 questions are free on both web and iOS — five study modes on the web, seven on iOS, with no ads and no account. Pro unlocks the complete question bank for £2.99 lifetime or £1.99/month.</p></details>
+      <details><summary>What's actually on the real test?</summary><p>24 multiple-choice questions in 45 minutes. You need 18 correct — 75% — to pass. It costs £50 to book and you can retake it as many times as you need.</p></details>
+      <details><summary>Does it work offline?</summary><p>Yes. The iOS app works fully offline, and the web version keeps working after the first load.</p></details>
+      <details><summary>Do you collect any of my data?</summary><p>None. No analytics, no tracking, no ad IDs, no account. Your progress lives on your device and nowhere else.</p></details>
+      <details><summary>Is there an Android version?</summary><p>Not yet — but the free web app runs in any mobile browser, and you can add it to your home screen.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Your test is booked. <em>Start tonight.</em></h2>
+    <p>Ten minutes in the browser, free, right now.</p>
+    <div class="cta-row">
+      <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold btn-lg">Download on the App Store</a>
+      <a href="/practice/" class="btn btn-ghost btn-lg">Try free in your browser →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="logo" style="margin-bottom:10px">Life in the <span>UK</span></div>
+        <div style="font-size:13px">Built in London by <a href="https://byaga.dev" style="color:var(--gold)">Aga</a></div>
+      </div>
+      <div><h5>Product</h5><a href="/practice/">Free web app</a><a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656">iOS app</a><a href="#pricing">Pricing</a></div>
+      <div><h5>Legal</h5><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/support/">Support</a></div>
+      <div><h5>Official</h5><a href="#">gov.uk test booking</a><a href="#">Official handbook</a></div>
+    </div>
+    <p class="disc">Life in the UK: Flashcards is an independent study aid. It is not affiliated with, endorsed by, or connected to the Home Office, UK Visas and Immigration, or any government body. Passing practice tests in this app does not guarantee passing the official test. © 2026 Aga Drapinska-Tonge.</p>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged screenshot"><img alt=""></dialog>
+
+<script>
+(function(){
+  const dlg = document.getElementById('lightbox');
+  const dlgImg = dlg.querySelector('img');
+  function open(src, alt){
+    dlgImg.src = src;
+    dlgImg.alt = alt || '';
+    dlg.showModal();
+  }
+  document.querySelectorAll('.phone').forEach(function(p){
+    const img = p.querySelector('img');
+    if (!img) return;
+    p.addEventListener('click', function(){ open(img.src, img.alt); });
+    p.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img.src, img.alt); }
+    });
+  });
+  dlg.addEventListener('click', function(){ dlg.close(); });
+})();
+</script>
+
+</body>
+</html>

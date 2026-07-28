@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Life in the UK: Flashcards</title>
+<meta name="description" content="Get support for Life in the UK: Revision Flashcards.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0f1f3d;
+    color: #faf6ee;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+    display: flex; justify-content: center;
+    position: relative; overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse at 15% 0%, rgba(201,168,76,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 100%, rgba(26,58,110,0.5) 0%, transparent 55%);
+  }
+  body::after {
+    content: '🇬🇧'; position: fixed; bottom: -30px; right: -30px;
+    font-size: 260px; opacity: 0.03; pointer-events: none; z-index: 0;
+  }
+  .page { position: relative; z-index: 1; width: 100%; max-width: 720px; }
+  .back {
+    display: inline-block; margin-bottom: 28px;
+    font-size: 0.82rem; color: rgba(250,246,238,0.55);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .back:hover { color: #c9a84c; }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    color: #c9a84c; letter-spacing: 0.3px; line-height: 1.25;
+    margin-bottom: 24px;
+  }
+  hr { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 28px 0; }
+  p { color: rgba(250,246,238,0.82); font-size: 0.95rem; font-weight: 300; line-height: 1.75; margin-bottom: 14px; }
+  a { color: #c9a84c; text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
+  a:hover { color: #e8c97a; border-bottom-color: #e8c97a; }
+  .links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .links a {
+    font-size: 0.85rem; color: rgba(250,246,238,0.65);
+    border-bottom: none; transition: color 0.2s;
+  }
+  .links a:hover { color: #c9a84c; }
+  @media (max-width: 600px) {
+    body { padding: 20px 14px 60px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <a href="/" class="back">← back to Life in the UK: Flashcards</a>
+  <h1>Support — Life in the UK: Flashcards</h1>
+  <p>Having trouble with the app? We're here to help.</p>
+  <p>Email us at <a href="mailto:hello@byaga.dev">hello@byaga.dev</a></p>
+  <p>We aim to respond within 2 business days.</p>
+  <hr>
+  <div class="links">
+    <a href="/privacy/">privacy policy →</a>
+    <a href="/terms/">terms of use →</a>
+  </div>
+</div>
+</body>
+</html>
