@@ -1,4 +1,4 @@
-# Life in the UK — Revision Tool
+# Life in the UK: Flashcards
 
 The standalone site for the Life in the UK citizenship test revision app, deployed at [lifeintheukflashcards.com](https://lifeintheukflashcards.com). The core practice tool (`practice/index.html`) is a single self-contained HTML file; the surrounding site (landing page, About, legal pages) is plain static HTML. No dependencies, no build step.
 
