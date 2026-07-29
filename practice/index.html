@@ -8,6 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
     *,
     *::before,
@@ -48,7 +49,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 80px;
+      padding: 24px 16px 40px;
       position: relative;
       overflow-x: hidden;
     }
@@ -1232,6 +1233,15 @@
 </head>
 
 <body>
+
+<nav class="site-nav">
+  <div class="site-nav-in">
+    <a href="/" class="btn btn-ghost btn-sm"><span class="arrow">←</span> Back</a>
+    <a href="/" class="logo">Life in the <span>UK</span></a>
+    <div class="spacer"></div>
+    <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold">Download</a>
+  </div>
+</nav>
 
   <header>
     <span class="crown">♛</span>
@@ -3549,6 +3559,37 @@
 
     renderAll();
   </script>
+
+<footer class="site-footer">
+  <div class="site-footer-in">
+    <div class="fgrid">
+      <div>
+        <a href="/" class="flogo">Life in the <span>UK</span></a>
+        <div class="built">Built by <a href="/about/">Aga</a></div>
+        <div class="built"><a href="https://byaga.dev" target="_blank" rel="noopener">byaga.dev ↗</a></div>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/practice/">Free web app</a>
+        <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656">iOS app</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/terms/">Terms of use</a>
+        <a href="/support/">Support</a>
+      </div>
+      <div>
+        <h5>Official</h5>
+        <a href="https://www.gov.uk/life-in-the-uk-test" target="_blank" rel="noopener">gov.uk test booking</a>
+        <a href="https://www.tsoshop.co.uk/product/9780113413409/Society/Life-in-the-UK/Life-in-the-United-Kingdom-A-Guide-for-New-Residents-Paperback" target="_blank" rel="noopener">Official handbook</a>
+      </div>
+    </div>
+    <p class="disc">Life in the UK: Flashcards is an independent study aid. It is not affiliated with, endorsed by, or connected to the Home Office, UK Visas and Immigration, or any government body. Passing practice tests in this app does not guarantee passing the official test. © 2026 Aga Drapinska-Tonge.</p>
+  </div>
+</footer>
+
 </body>
 
 </html>

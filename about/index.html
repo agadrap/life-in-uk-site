@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -19,8 +20,7 @@
     background: #0f1f3d;
     color: #faf6ee;
     min-height: 100vh;
-    padding: 40px 20px 80px;
-    display: flex; justify-content: center;
+    display: flex; flex-direction: column;
     position: relative; overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
@@ -34,13 +34,13 @@
     content: '🇬🇧'; position: fixed; bottom: -30px; right: -30px;
     font-size: 260px; opacity: 0.03; pointer-events: none; z-index: 0;
   }
-  .page { position: relative; z-index: 1; width: 100%; max-width: 720px; }
-  .back {
-    display: inline-block; margin-bottom: 28px;
-    font-size: 0.82rem; color: rgba(250,246,238,0.55);
-    text-decoration: none; transition: color 0.2s;
+  main.page {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+    flex: 1;
   }
-  .back:hover { color: #c9a84c; }
   h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.5rem, 4vw, 2.1rem);
@@ -48,24 +48,33 @@
     margin-bottom: 24px;
   }
   h1 em { font-style: italic; color: #faf6ee; }
-  hr { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 28px 0; }
-  p { color: rgba(250,246,238,0.82); font-size: 0.95rem; font-weight: 300; line-height: 1.75; margin-bottom: 14px; }
-  a { color: #c9a84c; text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
-  a:hover { color: #e8c97a; border-bottom-color: #e8c97a; }
+  main.page hr { border: none; border-top: 1px solid rgba(201,168,76,0.15); margin: 28px 0; }
+  main.page p { color: rgba(250,246,238,0.82); font-size: 0.95rem; font-weight: 300; line-height: 1.75; margin-bottom: 14px; }
+  main.page a { color: #c9a84c; text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
+  main.page a:hover { color: #e8c97a; border-bottom-color: #e8c97a; }
   .links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 6px; }
   .links a {
     font-size: 0.85rem; color: rgba(250,246,238,0.65);
     border-bottom: none; transition: color 0.2s;
   }
-  .links a:hover { color: #c9a84c; }
+  .links a:hover { color: #c9a84c; border-bottom: none; }
   @media (max-width: 600px) {
-    body { padding: 20px 14px 60px; }
+    main.page { padding: 32px 14px 48px; }
   }
 </style>
 </head>
 <body>
-<div class="page">
-  <a href="/" class="back">← back to Life in the UK: Flashcards</a>
+
+<nav class="site-nav">
+  <div class="site-nav-in">
+    <a href="/" class="btn btn-ghost btn-sm"><span class="arrow">←</span> Back</a>
+    <a href="/" class="logo">Life in the <span>UK</span></a>
+    <div class="spacer"></div>
+    <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656" class="btn btn-gold">Download</a>
+  </div>
+</nav>
+
+<main class="page">
   <h1>About</h1>
 
   <p>Hi, I'm Aga.</p>
@@ -82,6 +91,37 @@
     <a href="/terms/">terms of use →</a>
     <a href="/support/">support →</a>
   </div>
-</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-in">
+    <div class="fgrid">
+      <div>
+        <a href="/" class="flogo">Life in the <span>UK</span></a>
+        <div class="built">Built by <a href="/about/">Aga</a></div>
+        <div class="built"><a href="https://byaga.dev" target="_blank" rel="noopener">byaga.dev ↗</a></div>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/practice/">Free web app</a>
+        <a href="https://apps.apple.com/gb/app/life-in-the-uk-flashcards/id6761814656">iOS app</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/terms/">Terms of use</a>
+        <a href="/support/">Support</a>
+      </div>
+      <div>
+        <h5>Official</h5>
+        <a href="https://www.gov.uk/life-in-the-uk-test" target="_blank" rel="noopener">gov.uk test booking</a>
+        <a href="https://www.tsoshop.co.uk/product/9780113413409/Society/Life-in-the-UK/Life-in-the-United-Kingdom-A-Guide-for-New-Residents-Paperback" target="_blank" rel="noopener">Official handbook</a>
+      </div>
+    </div>
+    <p class="disc">Life in the UK: Flashcards is an independent study aid. It is not affiliated with, endorsed by, or connected to the Home Office, UK Visas and Immigration, or any government body. Passing practice tests in this app does not guarantee passing the official test. © 2026 Aga Drapinska-Tonge.</p>
+  </div>
+</footer>
+
 </body>
 </html>
