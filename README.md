@@ -16,6 +16,10 @@ Download `practice/index.html` and open it in any modern browser — or visit th
 
 No internet connection required after the initial load (fonts are loaded from Google Fonts).
 
+## Maintenance
+
+When a page's content changes, update that page's `<lastmod>` entry in `sitemap.xml` to today's date (ISO `YYYY-MM-DD`). Only bump the dates for pages that actually changed — stamping every URL on every deploy trains Google to ignore the freshness signal.
+
 ## Disclaimer
 
 This tool is for revision purposes only. Always refer to the [official Life in the UK handbook](https://www.gov.uk/life-in-the-uk-test) for authoritative content.
