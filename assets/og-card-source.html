@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0f1f3d;--royal:#1a3a6e;--gold:#c9a84c;--gold-l:#e8c97a;--cream:#faf6ee}
+body{width:1200px;height:630px;overflow:hidden;background:var(--navy);
+ font-family:'DM Sans','Carlito',sans-serif;color:var(--cream);position:relative}
+body::before{content:'';position:absolute;inset:0;
+ background:radial-gradient(ellipse at 5% -10%,rgba(201,168,76,.16) 0%,transparent 52%),
+            radial-gradient(ellipse at 95% 110%,rgba(26,58,110,.85) 0%,transparent 60%)}
+.bar{position:absolute;top:0;left:0;right:0;height:7px;
+ background:linear-gradient(90deg,var(--gold) 0%,var(--gold-l) 45%,var(--royal) 100%)}
+.wrap{position:relative;height:100%;display:flex;align-items:center;padding:0 0 0 68px;z-index:2}
+.left{width:660px;flex-shrink:0}
+.eyebrow{font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+ font-weight:700;margin-bottom:20px}
+h1{font-family:'Playfair Display','GFS Baskerville','LM Roman 10',serif;font-weight:700;
+ font-size:70px;line-height:1.02;letter-spacing:-.022em;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--gold-l);display:block}
+.sub{font-size:23px;font-weight:300;line-height:1.45;color:rgba(250,246,238,.76);
+ max-width:31ch;margin-bottom:34px}
+.stats{display:flex;gap:34px;align-items:flex-end}
+.stat b{display:block;font-family:'Playfair Display','Carlito','DejaVu Sans',sans-serif;font-size:42px;
+ font-weight:700;color:var(--gold-l);line-height:1;font-variant-numeric:lining-nums tabular-nums;
+ font-feature-settings:"lnum" 1,"tnum" 1;letter-spacing:-.01em}
+.stat span{font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;
+ color:rgba(250,246,238,.55);font-weight:600}
+.rule{width:1px;height:44px;background:rgba(201,168,76,.32)}
+.right{position:absolute;right:0;top:0;height:100%;width:540px}
+.ph{position:absolute;border-radius:26px;box-shadow:0 30px 70px rgba(0,0,0,.62);
+ border:1.5px solid rgba(201,168,76,.30)}
+.ph img{display:block;width:100%;border-radius:25px}
+.ph1{width:262px;top:52px;right:246px;transform:rotate(-7deg)}
+.ph2{width:280px;top:120px;right:8px;transform:rotate(6deg)}
+.badge{position:absolute;left:68px;bottom:40px;font-size:14.5px;
+ color:rgba(250,246,238,.5);font-weight:500;letter-spacing:.03em;z-index:3}
+.badge b{color:var(--gold);font-weight:700}
+</style></head>
+<body>
+<div class="bar"></div>
+<div class="wrap">
+  <div class="left">
+    <div class="eyebrow">Free web app &nbsp;·&nbsp; iOS &nbsp;·&nbsp; No sign-up</div>
+    <h1>Life in the UK<em>Flashcards</em></h1>
+    <p class="sub">Pass the citizenship test — and actually understand the country behind it.</p>
+    <div class="stats">
+      <div class="stat"><b>794</b><span>Questions</span></div>
+      <div class="rule"></div>
+      <div class="stat"><b>25</b><span>Monarchs</span></div>
+      <div class="rule"></div>
+      <div class="stat"><b>48</b><span>Notable Britons</span></div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="ph ph1"><img src="flashcard.png"></div>
+    <div class="ph ph2"><img src="monarchs.png"></div>
+  </div>
+</div>
+<div class="badge">lifeintheukflashcards.com &nbsp;&nbsp;·&nbsp;&nbsp; <b>85 questions free</b></div>
+</body></html>

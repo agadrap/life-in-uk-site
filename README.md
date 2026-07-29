@@ -4,7 +4,7 @@ The standalone site for the Life in the UK citizenship test revision app, deploy
 
 ## Features
 
-- **Flashcards** — 85 multiple choice questions across 5 categories (Values, History, Government, Society, Citizenship), matching the real test format
+- **Flashcards** — 85 free multiple-choice questions across 5 categories (Values, History, Government, Society, Citizenship), matching the real test format; Pro unlocks all 794
 - **Monarchs** — interactive family tree of British monarchs with dynasty columns, popup details and reign timeline
 - **History Timeline** — chronological spine of key events filterable by era, with monarch and Prime Minister annotations
 - **Notable Britons** — 48 profiles across Science, Arts, Sport and Politics with expandable biographies
